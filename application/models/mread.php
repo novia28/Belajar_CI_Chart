@@ -10,8 +10,9 @@ class Mread extends CI_Model{
      
     public function get()
     {
-        $this->db->select('*');
-        $this->db->like('tanggal','2011-');
+        //$this->db->select('*');
+        $this->db->get('tbl_pendapatan');
+		$this->db->like('tanggal','2013-');
         $this->db->order_by('tanggal','asc');
         return $this->db->get('tbl_pendapatan');
     }
